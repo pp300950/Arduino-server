@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LED Status</title>
+</head>
+<body>
+  <h1>LED Status</h1>
+  <p id="led-status">Fetching LED status...</p>
+
+  <script>
+    // Function สำหรับโหลดข้อมูล LED status จากตัวกลาง
+    function loadLedStatus() {
+      fetch('http://192.168.60.155')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('led-status').innerText = `LED status: ${data.led_status}`;
+        })
+        .catch(error => console.error('Error fetching LED status:', error));
+    }
+
+    // โหลดข้อมูล LED status เมื่อเปิดหน้าเว็บ
+    document.addEventListener('DOMContentLoaded', loadLedStatus);
+  </script>
+</body>
+</html>
