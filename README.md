@@ -1,0 +1,1 @@
+The Arduino board creates a web server which is like a host for our website.  And we will be able to communicate with it if we use the same internet network. The code board will wait to receive commands to turn on or off the LEDs on the board through commands sent from the website. This website can only be accessed on devices using the same internet network.
